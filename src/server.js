@@ -6,7 +6,7 @@ const init = async () => {
     port: process.env.PORT || 5000,
     routes: {
       cors: {
-        origin: ['http://notesapp-v1.dicodingacademy.com'],
+        origin: ['*'],
       },
     },
   });
