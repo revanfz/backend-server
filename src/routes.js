@@ -1,4 +1,5 @@
 const {
+  homeHandler,
   addNewNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
@@ -16,6 +17,11 @@ const {
 // }
 
 const routes = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: homeHandler,
+  },
   {
     method: 'POST',
     path: '/notes',

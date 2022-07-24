@@ -1,6 +1,17 @@
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
 
+const homeHandler = (request, h) => {
+  const response = h.response({
+    status: 'success',
+    message: 'Selamat datang di Homepage',
+  });
+  response.type('application/json');
+  response.header('X-Powered-By', 'Node.js');
+  response.code(200);
+  return response;
+};
+
 const addNewNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
   const id = nanoid(16);
@@ -118,6 +129,7 @@ const deleteNoteByIdHandler = (request, h) => {
 };
 
 module.exports = {
+  homeHandler,
   addNewNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
